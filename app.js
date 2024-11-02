@@ -45,13 +45,15 @@ let automaticAlliances = [
 //#region 🧠 Logic
 
 function purchaseTools(toolName) {
-  const foundTool = clickTools.find(foundTool => foundTool.name == toolName)
+  const foundTool = clickTools.find(tool => tool.name == toolName)
 
+  // NOTE SUCCESS!!!!!! All you needed to do was fill out the onclick ('') section!!!
   if (trash < foundTool.price) {
     window.alert(`Please collect more trash to utilize the ${foundTool.name}!`)
+    return
   }
 
-  trash -= foundTool.price
+  trash += foundTool.price
   foundTool.quantity++
 
 
@@ -153,8 +155,8 @@ function drawToolStats() {
   for (let i = 0; i < clickTools.length; i++) {
     const tools = clickTools[i];
     const toolsElem = document.getElementById(tools.name)
-    const spanElem = toolsElem.querySelector('span')
-    spanElem.innerText = tools.quantity.toString()
+    // const spanElem = toolsElem.querySelector('span')
+    // spanElem.innerText = tools.quantity.toString()
   }
 }
 
