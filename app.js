@@ -1,6 +1,8 @@
 // console.log('work!!')
 // NOTE huh?
 
+//#region State
+
 let clickTools = [
   {
     name: 'Shuttle',
@@ -34,8 +36,30 @@ let automaticAlliances = [
   }
 ];
 
+//#endregion
 
 
+
+
+
+//#region 🧠 Logic
+
+function purchaseTools(toolName) {
+  const foundTool = clickTools.find(foundTool => foundTool.name == toolName)
+
+  if (trash < foundTool.price) {
+    window.alert(`Please collect more trash to utilize the ${foundTool.name}!`)
+  }
+
+  trash -= foundTool.price
+  foundTool.quantity++
+
+
+  drawTrash()
+  drawToolStats()
+
+  console.log('get tool')
+}
 
 
 
@@ -57,38 +81,38 @@ function drawTrash() {
 
 // let shuttle = 0
 // NOTE there's already a let function for the arrays above, so line 58 above isn't needed!
-function buyShuttle() {
-  const shuttle = clickTools[0]
-  shuttle.quantity += 1
+// function buyShuttle() {
+//   const shuttle = clickTools[0]
+//   shuttle.quantity += 1
 
-  console.log('shuttle', shuttle);
+//   console.log('shuttle', shuttle);
 
-  drawShuttle()
-}
+//   drawShuttle()
+// }
 
-function drawShuttle() {
-  const shuttle = clickTools[0]
-  const shuttleElem = document.getElementById('shuttle-bought')
-  shuttleElem.innerText = shuttle.quantity.toString()
-  // NOTE this section was DIFFICULT!!!! use the period notation to tap into the array by section!!!!3
+// function drawShuttle() {
+//   const shuttle = clickTools[0]
+//   const shuttleElem = document.getElementById('shuttle-bought')
+//   shuttleElem.innerText = shuttle.quantity.toString()
+//   // NOTE this section was DIFFICULT!!!! use the period notation to tap into the array by section!!!!3
 
-}
+// }
 
-function buyCompactor() {
-  const compactor = clickTools[1]
-  compactor.quantity += 1
+// function buyCompactor() {
+//   const compactor = clickTools[1]
+//   compactor.quantity += 1
 
-  console.log('compactor', compactor);
+//   console.log('compactor', compactor);
 
-  drawCompactor()
-}
+//   drawCompactor()
+// }
 
-function drawCompactor() {
-  const compactor = clickTools[1]
-  const compactorElem = document.getElementById('compactor-bought')
-  compactorElem.innerText = compactor.quantity.toString()
+// function drawCompactor() {
+//   const compactor = clickTools[1]
+//   const compactorElem = document.getElementById('compactor-bought')
+//   compactorElem.innerText = compactor.quantity.toString()
 
-}
+// }
 
 function buyJunkmen() {
   const junkmen = automaticAlliances[0]
@@ -120,4 +144,31 @@ function drawFactory() {
   factoryElem.innerText = factory.quantity.toString()
 }
 
+//#endregion
 
+
+//#region 🎨 Graphics
+
+function drawToolStats() {
+  for (let i = 0; i < clickTools.length; i++) {
+    const tools = clickTools[i];
+    const toolsElem = document.getElementById(tools.name)
+    const spanElem = toolsElem.querySelector('span')
+    spanElem.innerText = tools.quantity.toString()
+  }
+}
+
+
+
+
+
+
+// function drawAllianceStats()
+
+
+//#endregion
+
+
+//#region 🕕 document load
+
+//#endregion
