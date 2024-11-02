@@ -1,0 +1,60 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1721062621903-d9ceeb5c3ba6?q=80&w=1466&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: inherit 0% 0% 50%;
+  background-size: cover;
+}
+
+/* NOTE Need some help with background positioning again */
+
+.bowlby {
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffc252;
+}
+
+.bowlby-2 {
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 250;
+  font-style: normal;
+  color: darkgoldenrod
+}
+
+
+
+
+
+.rubik {
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #b69373;
+}
+
+.moon-fix {
+  width: 500px;
+  height: 500px;
+}
+
+.moon-upgrades {
+  background-color: #d48745;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.box-background {
+  color: brown;
+}
+
+/* NOTE Show me how to ROOT! */
+
+/* ANCHOR Is there still a reason my custom font isn't showing up? SOLVED! link belongs in the HEAD */
+
+h1 {
+  text-shadow: 0 .3rem #295548;
+  text-shadow: 5px 5px 8px #0a0705;
+}
+
+.extra-shadow {
+  text-shadow: 2px 2px 2px #0a0705;
+}
