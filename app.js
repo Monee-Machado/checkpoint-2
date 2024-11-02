@@ -87,6 +87,7 @@ function drawCompactor() {
   const compactor = clickTools[1]
   const compactorElem = document.getElementById('compactor-bought')
   compactorElem.innerText = compactor.quantity.toString()
+
 }
 
 function buyJunkmen() {
