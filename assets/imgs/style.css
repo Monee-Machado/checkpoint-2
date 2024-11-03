@@ -2,7 +2,9 @@ body {
   background-image: url(https://images.unsplash.com/photo-1721062621903-d9ceeb5c3ba6?q=80&w=1466&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-position: inherit 0% 0% 50%;
   background-size: cover;
+  user-select: none;
 }
+
 
 /* NOTE Need some help with background positioning again */
 

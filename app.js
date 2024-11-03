@@ -44,24 +44,25 @@ let automaticAlliances = [
 
 //#region 🧠 Logic
 
-function purchaseTools(toolName) {
-  const foundTool = clickTools.find(tool => tool.name == toolName)
+// function purchaseTools(toolName) {
+//   const foundTool = clickTools.find(tool => tool.name == toolName)
 
-  // NOTE SUCCESS!!!!!! All you needed to do was fill out the onclick ('') section!!!
-  if (trash < foundTool.price) {
-    window.alert(`Please collect more trash to utilize the ${foundTool.name}!`)
-    return
-  }
+//   // NOTE SUCCESS!!!!!! All you needed to do was fill out the onclick ('') section!!!
+//   // NOTE ACTUALLY--- sike, because the foundtool function doesn't appear to be defined for some odd reason
+//   if (trash < foundTool.price) {
+//     window.alert(`Please collect more trash to utilize the ${foundTool.name}!`)
+//     return
+//   }
 
-  trash += foundTool.price
-  foundTool.quantity++
+//   trash += foundTool.price
+//   foundTool.quantity++
 
 
-  drawTrash()
-  drawToolStats()
+//   drawTrash()
+//   drawToolStats()
 
-  console.log('get tool')
-}
+//   console.log('get tool')
+// }
 
 
 
@@ -81,40 +82,57 @@ function drawTrash() {
 }
 
 
-// let shuttle = 0
+let shuttle = 0
 // NOTE there's already a let function for the arrays above, so line 58 above isn't needed!
-// function buyShuttle() {
-//   const shuttle = clickTools[0]
-//   shuttle.quantity += 1
+function buyShuttle() {
+  const shuttle = clickTools[0]
+  // shuttle.quantity += 1
 
-//   console.log('shuttle', shuttle);
+  if (trash < shuttle.price) {
+    window.alert(`Please collect more trash to utilize the Shuttle!`)
+    return
+  }
+  if (trash > shuttle.price) {
+    trash -= 100
+  }
 
-//   drawShuttle()
-// }
+  console.log('shuttle', shuttle);
 
-// function drawShuttle() {
-//   const shuttle = clickTools[0]
-//   const shuttleElem = document.getElementById('shuttle-bought')
-//   shuttleElem.innerText = shuttle.quantity.toString()
-//   // NOTE this section was DIFFICULT!!!! use the period notation to tap into the array by section!!!!3
+  drawTrash()
+  drawShuttle()
+}
 
-// }
+function drawShuttle() {
+  const shuttle = clickTools[0]
+  const shuttleElem = document.getElementById('shuttle-bought')
+  shuttleElem.innerText = shuttle.quantity.toString()
+  // NOTE this section was DIFFICULT!!!! use the period notation to tap into the array by section!!!!3
 
-// function buyCompactor() {
-//   const compactor = clickTools[1]
-//   compactor.quantity += 1
+}
 
-//   console.log('compactor', compactor);
+function buyCompactor() {
+  const compactor = clickTools[1]
+  compactor.quantity += 1
 
-//   drawCompactor()
-// }
+  console.log('compactor', compactor);
 
-// function drawCompactor() {
-//   const compactor = clickTools[1]
-//   const compactorElem = document.getElementById('compactor-bought')
-//   compactorElem.innerText = compactor.quantity.toString()
+  if (trash < compactor.price) {
+    window.alert(`Please collect more trash to utilize the Compactor!`)
+    return
+  }
+  if (trash > compactor.price) {
+    trash -= 100
+  }
 
-// }
+  drawCompactor()
+}
+
+function drawCompactor() {
+  const compactor = clickTools[1]
+  const compactorElem = document.getElementById('compactor-bought')
+  compactorElem.innerText = compactor.quantity.toString()
+
+}
 
 function buyJunkmen() {
   const junkmen = automaticAlliances[0]
@@ -129,6 +147,8 @@ function drawJunkmen() {
   const junkmen = automaticAlliances[0]
   const junkmenElem = document.getElementById('junkmen-bought')
   junkmenElem.innerText = junkmen.quantity.toString()
+
+  drawTrash()
 }
 
 function buyFactory() {
@@ -144,6 +164,9 @@ function drawFactory() {
   const factory = automaticAlliances[1]
   const factoryElem = document.getElementById('factory-bought')
   factoryElem.innerText = factory.quantity.toString()
+
+
+
 }
 
 //#endregion
@@ -155,8 +178,8 @@ function drawToolStats() {
   for (let i = 0; i < clickTools.length; i++) {
     const tools = clickTools[i];
     const toolsElem = document.getElementById(tools.name)
-    // const spanElem = toolsElem.querySelector('span')
-    // spanElem.innerText = tools.quantity.toString()
+    const spanElem = toolsElem.querySelector('span')
+    spanElem.innerText = tools.quantity.toString()
   }
 }
 
