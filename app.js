@@ -83,7 +83,7 @@ function drawTrash() {
 
 
 let shuttle = 0
-// NOTE there's already a let function for the arrays above, so line 58 above isn't needed!
+// NOTE there's already a let function for the arrays above, so line above isn't needed!
 function buyShuttle() {
   const shuttle = clickTools[0]
   // shuttle.quantity += 1
@@ -151,6 +151,15 @@ function drawJunkmen() {
   drawTrash()
 }
 
+// function junkTimer() {
+//   for (let i = 0; i automaticAlliances.length; i++) {
+//     const junkmen = automaticAlliances[i]
+//     junkmen.bonus += mineTrash
+//   }
+// }
+
+// setInterval(junkTimer, 3000)
+
 function buyFactory() {
   const factory = automaticAlliances[1]
   factory.quantity += 1
@@ -174,6 +183,7 @@ function drawFactory() {
 
 //#region 🎨 Graphics
 
+// NOTE THIS function (was) originally for displaying the tool's stats AFTER purchasing the item, I don't really know where to go from here
 function drawToolStats() {
   for (let i = 0; i < clickTools.length; i++) {
     const tools = clickTools[i];
@@ -196,4 +206,5 @@ function drawToolStats() {
 
 //#region 🕕 document load
 
+// NOTE THIS is for accumulated time between timed items (alliances)
 //#endregion
